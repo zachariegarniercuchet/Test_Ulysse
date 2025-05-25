@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site Années 2000</title>
+    <!-- Feuilles de style basiques pour un look rétro -->
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            color: #000;
+            margin: 20px;
+        }
+        h1 {
+            color: #0066cc;
+            font-size: 2em;
+        }
+        h2 {
+            color: #cc6600;
+            font-size: 1.5em;
+        }
+        p {
+            font-size: 1em;
+            line-height: 1.4;
+        }
+        img.centered {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+        }
+        .option-button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .option-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .video-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        video {
+            max-width: 90%;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function afficherExplication(prix) {
+            let message = "";
+            if (prix === 5) {
+                message = "5 euros : C'est le prix de base pour un accès simple et rapide.";
+            } else if (prix === 7) {
+                message = "7 euros : Ce tarif inclut un bonus spécial et un service prioritaire.";
+            }
+            document.getElementById("explication").innerText = message;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const video = document.querySelector("video");
+            video.addEventListener("click", function (e) {
+                if (e.target === video) {
+                    if (video.paused) {
+                        video.play();
+                    } else {
+                        video.pause();
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Titre principal de la page -->
+    <h1>Bienvenue sur Mon Site Rétro</h1>
+
+    <!-- Sous-titre comme dans les années 2000 -->
+    <h2>Votre porte d'entrée vers le passé du web</h2>
+
+    <!-- Paragraphe descriptif -->
+    <p>
+        Ceci est un exemple de page simple en HTML, inspirée du style des premiers sites Internet.
+        Vous apprenez ici à utiliser les balises de base : <code>&lt;h1&gt;</code> pour le titre,
+        <code>&lt;h2&gt;</code> pour le sous-titre et <code>&lt;p&gt;</code> pour un paragraphe.
+    </p>
+
+    <!-- Exemple d'image centrée -->
+    <img src="mygraphique.png" alt="Description de l'image" class="centered">
+
+    <!-- Sélecteur de prix -->
+    <div class="option-container">
+        <button class="option-button" onclick="afficherExplication(5)">5 euros</button>
+        <button class="option-button" onclick="afficherExplication(7)">7 euros</button>
+        <p id="explication"></p>
+    </div>
+
+    <!-- Vidéo cliquable -->
+     <!-- 
+    <div class="video-container">
+        <video src="IMG_6127.mov" controls></video>
+        <p>(Clique sur la vidéo pour mettre en pause ou relancer)</p>
+    </div>
+    -->
+</body>
+</html>
